@@ -1,4 +1,4 @@
-package week1;
+package session1;
 
 public class AT02_answer {
 

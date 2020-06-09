@@ -1,4 +1,4 @@
-package week1;
+package session1;
 
 import java.util.Arrays;
 
@@ -29,14 +29,14 @@ class Solution28 {
         	}
         	}
         }
-        //1. ÀÛÀº ¾Öµé ¸ÕÀú ºô·ÁÁÖ±â
+        //1. ï¿½ï¿½ï¿½ï¿½ ï¿½Öµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
         for(int i=0;i<lost.length;i++) {
         	for(int j=0;j<reserve.length;j++) {
         		if(lost[i]==reserve[j]-1) {
         			reserve[j]=-1;
         			lost[i] = -10;
         		}else if(lost[i]==reserve[j]+1) {
-					//2. Å«¾Ö ºô·ÁÁÖ±â
+					//2. Å«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
 					reserve[j]=-1;
 					lost[i] = -10;
 	        	}

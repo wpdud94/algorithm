@@ -1,4 +1,4 @@
-package week1;
+package session1;
 
 import java.util.*;
 
