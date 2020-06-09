@@ -13,11 +13,14 @@ public class AT30 {
 class Solution30 {
 	public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = {};
-        //1. ÀÌÁø¼ö·Î º¯È¯
-        Math.
-        //2. µÎ Áöµµ ÇÕÄ¡±â 0ÀÌ¿ÜÀÇ ¼ö´Â º®
+        int cnt = 0;
+        //1. ì´ì§„ìˆ˜ ë³€í™˜
+        while(cnt<n) {
+        	//arr1[cnt]
+        }
+        //2. ì§€ë„ í•©ì¹˜ê¸°
         
-        //3. #°ú °ø¹éÀ¸·Î ¹®ÀÚ¿­ ¹è¿­ Ãâ·Â
+        //3. ë¬¸ìì—´ ì¶”ì¶œ
         return answer;
     }
 }
