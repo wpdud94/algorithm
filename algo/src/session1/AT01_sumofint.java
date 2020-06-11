@@ -1,6 +1,10 @@
 package session1;
-
-public class AT01_answer {
+/**
+ * 
+ * @author Playdata
+ * 두 수 사이의 정수 합
+ */
+public class AT01_sumofint {
 
 	public static void main(String[] args) {
 		Solution01 s1 = new Solution01();

@@ -1,6 +1,11 @@
 package session1;
-
-public class AT02_answer {
+/**
+ * 
+ * @author Playdata
+ *	수박수박수
+ *	n만큼 문자열패턴 반복
+ */
+public class AT02_printStrasN {
 
 	public static void main(String[] args) {
 		Solution02 s2 = new Solution02();
