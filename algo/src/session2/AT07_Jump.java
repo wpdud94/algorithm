@@ -8,7 +8,7 @@ public class AT07_Jump {
 
 	public static void main(String[] args) {
 		Solution07 sol = new Solution07();
-		System.out.println(sol.solution(4));
+		System.out.println(sol.solution(24));
 	}
 
 }
@@ -19,22 +19,28 @@ class Solution07{
         //2의 개수에 따른 조합수.. 2개 q개 일 때 가능한 배치 경우의 수
         //pCq... maxp=n, maxq=n/2... nC0, n-1C1, ... ,n-maxqCmaxq
         //조합 pCq연산
-        int son=1;
-        int mother=1;
+        
         int com=0;
+        int q = 1;
         for(int p=n-1;p>=n/2;p--) {
-        	int q = 1;
-        	while(q>0) {
-            	son*=p;
-            	mother*=q;
+        	//System.out.println("p: "+ p);
+        	//System.out.println("q: "+q);
+        	int son=1;
+            int mother=1;
+            int s=p;
+            int r=q;
+            com=0;
+        	while(r>0) {
+            	son*=s;
+            	mother*=r;
             	com=son/mother;
-            	p--;
-            	q--;
+            	r--;
+            	s--;
             }
         	answer+=com;
-        	
         	q++;
-        	System.out.println(q);
+        	
+        	//System.out.println("com: "+ com);
         	if(q>n/2) break;
             
         }
