@@ -3,7 +3,7 @@ package instructors;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Algo01_GunManTest2 {
+public class Algo01_GunManTest {
 
 	public static void main(String[] args)throws Exception {
 		long start = System.currentTimeMillis();
