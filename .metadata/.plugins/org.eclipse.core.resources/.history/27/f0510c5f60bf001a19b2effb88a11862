@@ -1,0 +1,29 @@
+package instructors;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Algo02_CutSection {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		// 1. 영역 구성
+		// 1-1. 가로 세로 받기
+		int width = sc.nextInt();
+		int height = sc.nextInt();
+		// 2. 가로 세로 별 구분 데이터 추출
+		// 2-1. 구분선 개수 받기
+		int numOfCut = sc.nextInt();
+		// 2-2. 가로 구분선 배열
+		int[]lineArr = new int[numOfCut*2];
+		for(int i=1;i<=numOfCut*2;i++) {
+			 = sc.nextInt()
+		}
+	}
+}
+/*
+10 8
+3
+0 3
+1 4
+0 2
+*/
