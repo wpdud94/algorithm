@@ -8,16 +8,16 @@ import java.util.Scanner;
 public class Algo02_CutSection {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		// 1. ¿µ¿ª ±¸¼º
-		// 1-1. °¡·Î ¼¼·Î ÇÑ°è¼± ¹Ş±â
+		// 1. ì˜ì—­ êµ¬ì„±
+		// 1-1. ê°€ë¡œ ì„¸ë¡œ í•œê³„ì„  ë°›ê¸°
 		int height = sc.nextInt();
 		int width = sc.nextInt();
-		// 2. °¡·Î ¼¼·Î º° ±¸ºĞ µ¥ÀÌÅÍ ÃßÃâ
-		// 2-1. ±¸ºĞ¼± °³¼ö ¹Ş±â
+		// 2. ê°€ë¡œ ì„¸ë¡œ ë³„ êµ¬ë¶„ ë°ì´í„° ì¶”ì¶œ
+		// 2-1. êµ¬ë¶„ì„  ê°œìˆ˜ ë°›ê¸°
 		int numOfCut = sc.nextInt();
 		int numOfW = 0;
 		int numOfH = 0;
-		// 2-2. ±¸ºĞ¼± ¸ğµÎ ¹Ş±â
+		// 2-2. êµ¬ë¶„ì„  ëª¨ë‘ ë°›ê¸°
 		int[]lineArr = new int[numOfCut*2];
 		for(int i=0;i<lineArr.length;i++) {
 			 lineArr[i] = sc.nextInt();
@@ -35,7 +35,7 @@ public class Algo02_CutSection {
 class Solution02{
 	public int CutSection(int width, int height, int numOfW, int numOfH, int[] lineArr) {
 		int answer = 0;
-		// 2-3. 0¸é °¡·Î ±¸ºĞ¼± ¹è¿­¿¡ , 1ÀÌ¸é ¼¼·Î ±¸ºĞ¼± ¹è¿­¿¡ ÇÒ´ç... ±âº» 0 ÇÒ´ç & ÇÑ°è¼± ÇÒ´ç
+		// 2-3. 0ë©´ ê°€ë¡œ êµ¬ë¶„ì„  ë°°ì—´ì— , 1ì´ë©´ ì„¸ë¡œ êµ¬ë¶„ì„  ë°°ì—´ì— í• ë‹¹... ê¸°ë³¸ 0 í• ë‹¹ & í•œê³„ì„  í• ë‹¹
 		int[] wLine = new int[numOfW+2];
 		int[] hLine = new int[numOfH+2];
 		int widx = 1;
@@ -53,22 +53,22 @@ class Solution02{
 		wLine[wLine.length-1]= height;
 		Arrays.sort(hLine);
 		Arrays.sort(wLine);
-		System.out.println("¼¼·Î±¸ºĞ¼± : " + Arrays.toString(hLine));
-		System.out.println("°¡·Î±¸ºĞ¼± : " + Arrays.toString(wLine));
-		// 2-4. ¼¼·ÎÄ­, °¡·ÎÄ­ ¹è¿­ ÃßÃâ
-		//°¡·ÎÄ­
+		System.out.println("ì„¸ë¡œêµ¬ë¶„ì„  : " + Arrays.toString(hLine));
+		System.out.println("ê°€ë¡œêµ¬ë¶„ì„  : " + Arrays.toString(wLine));
+		// 2-4. ì„¸ë¡œì¹¸, ê°€ë¡œì¹¸ ë°°ì—´ ì¶”ì¶œ
+		//ê°€ë¡œì¹¸
 		int[] wCut = new int[numOfW+1];
 		for(int i=0;i<wCut.length;i++) {
 			wCut[i]=wLine[i+1]-wLine[i];
 		}
-		//¼¼·ÎÄ­
+		//ì„¸ë¡œì¹¸
 		int[] hCut = new int[numOfH+1];
 		for(int i=0;i<hCut.length;i++) {
 			hCut[i]=hLine[i+1]-hLine[i];
 		}
-		System.out.println("¼¼·Î³ôÀÌ : " + Arrays.toString(hCut));
-		System.out.println("°¡·Î³Êºñ : " + Arrays.toString(wCut));
-		//3  ¿µ¿ª ³ĞÀÌ °è»ê
+		System.out.println("ì„¸ë¡œë†’ì´ : " + Arrays.toString(hCut));
+		System.out.println("ê°€ë¡œë„ˆë¹„ : " + Arrays.toString(wCut));
+		//3  ì˜ì—­ ë„“ì´ ê³„ì‚°
 		int[] area = new int[hCut.length*wCut.length];
 		int areaidx = 0;
 		for(int i=0;i<hCut.length;i++) {
@@ -77,7 +77,7 @@ class Solution02{
 				areaidx++;
 			}
 		}
-		//3-1 Á¤·Ä
+		//3-1 ì •ë ¬
 		Arrays.sort(area);
 		answer = area[area.length-1];
 		
