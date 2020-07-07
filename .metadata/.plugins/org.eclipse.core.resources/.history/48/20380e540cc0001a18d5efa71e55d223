@@ -1,0 +1,32 @@
+package session2;
+public class AT10_Pocketmon {
+	
+	/**
+	 * 
+	 * @param args
+	 * 포켓몬을 다양성을 최대로 하며 고르기
+	 */
+
+	public static void main(String[] args) {
+		Solution10 sol = new Solution10();
+		System.out.println("ans : "+sol.solution(5000));
+
+	}
+
+}
+class Solution10{
+	int solution(int n){
+	    int ans = 0;
+	    //2의 배수면 나눈다  +홀수면 1뺀다, ++
+	    while(n>0) {
+	    	System.out.println(n);
+	    	if(n%2==0) {
+	    		n/=2;
+	    	}else {
+	    		n--;
+	    		ans++;
+	    	}
+	    }
+	    return ans;
+	}
+}
