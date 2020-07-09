@@ -1,2 +1,4 @@
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>1</message>\r\n<message>\uCD94\uAC00 \uCEE4\uBC0B</message>\r\n<message>\uAC15\uC0AC\uB2D8 \uC54C\uACE0\uB9AC\uC998 2</message>\r\n</messages>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>\uCD94\uAC00</message>\r\n<message>\uAC15\uC0AC\uB2D8 \uC54C\uACE0\uB9AC\uC998 3 &amp; \uC54C\uACE0\uB9AC\uC998\uC2A4\uD130\uB51410</message>\r\n<message>1</message>\r\n<message>\uCD94\uAC00 \uCEE4\uBC0B</message>\r\n<message>\uAC15\uC0AC\uB2D8 \uC54C\uACE0\uB9AC\uC998 2</message>\r\n</messages>
 eclipse.preferences.version=1
+resourcehistory_graph_split=500,500
+resourcehistory_rev_split=700,300
