@@ -1,0 +1,80 @@
+package instructors;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Algo04_findcoin {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int m = sc.nextInt();
+		int[][] M = new int[m][2];
+		for(int i=0;i<M.length;i++) {
+			for(int j=0;j<M[0].length;j++) {
+				M[i][j]=sc.nextInt();
+			}
+		}
+		for(int[] arr : M) System.out.println(Arrays.toString(arr));
+		
+		Solution04 sol = new Solution04();
+		System.out.println("정답은 : "+sol.findCoin(N, M));
+	}
+}
+class Solution04{
+	int findCoin(int N, int[][] M) {
+		int answer = 0;
+		// NxN 이차원 배열을 만든다
+		int[][] mat = new int[N][N];
+		for(int[] arr : mat) System.out.println(Arrays.toString(arr));
+		// M개의 statement를 읽는다
+		for(int i=0;i<M.length;i++) {
+			// x y이면 x행에 y열에  1를 배치.. y행 x열에 -1배치
+			int x = M[i][0]-1;
+			int y = M[i][1]-1;
+			mat[x][y] = 1;
+			mat[y][x] = -1;
+		}
+		// 각 열(k)을 훓는데 1이 존재하는 열 x에 해당하는 행 y로 가서 1이 있는지 찾는다(y)
+		for(int k=0;k<mat.length;k++) {
+			for(int x=0;x<mat.length;x++) {
+				if(mat[k][x]==1) {
+					for(int y=0;y<mat[x].length;y++) {
+						if(mat[x][y]==1) {
+							// 만일 있으면 k행 y열에 1을 넣는다
+							mat[k][y]=1;
+							mat[y][k]=-1;
+						}
+					}
+				}
+			}
+		}
+		System.out.println("최종행렬");
+		for(int[] arr:mat) System.out.println(Arrays.toString(arr));
+		for(int i=0;i<mat.length;i++) {
+			int mcount = 0;
+			int lcount = 0;
+			for(int j=0;j<mat[i].length;j++) {
+				if(mat[i][j]==1) mcount++;
+				if(mat[i][j]==-1) lcount++;
+			}
+			System.out.println("m :"+mcount+"l :"+lcount);
+			if(mcount==N-1||lcount==N-1) {
+				answer++;
+			}else if(mcount==N-2&&lcount==N-2) {
+				answer=answer+2;
+			}
+		}
+		return answer;
+	}
+}
+
+/*
+5 4
+2 1
+4 3
+5 1
+4 2
+
+*/
