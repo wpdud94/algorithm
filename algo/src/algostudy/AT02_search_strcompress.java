@@ -1,4 +1,4 @@
-package algo1;
+package algostudy;
 
 public class AT02_search_strcompress {
 	public static void main(String[] args) {
@@ -18,7 +18,7 @@ class Solution02 {
     
     int searchSame(String s, int unit, int minL) {
     	for(int i=0;i<s.length();i++) {
-    		if(s.substring(i,unit+i+1));
+    		if(s.substring(i,unit+i+1) != null);
     	}
     	
     	
