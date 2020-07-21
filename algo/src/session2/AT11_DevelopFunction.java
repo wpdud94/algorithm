@@ -2,6 +2,7 @@ package session2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Stack;
 
 public class AT11_DevelopFunction {
 	
@@ -22,7 +23,32 @@ public class AT11_DevelopFunction {
 }
 class Solution11 {
 	public int[] solution(int[] progresses, int[] speeds) {
-        int[] answer = {};
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i=0;i<progresses.length;i++) {
+        	if((100-progresses[i])%speeds[i]==0) list.add((100-progresses[i])/speeds[i]);
+        	else list.add(((100-progresses[i])/speeds[i])+1);
+        }
+        
+        ArrayList<Integer> temp = new ArrayList<>();
+    	int first = list.get(0);
+    	int cnt=1;
+    	for(int i=1;i<list.size();i++) {
+    		if(list.get(i)<=first) {
+    			cnt++;
+    		}else {
+    			temp.add(cnt);
+    			first=list.get(i);
+    			cnt=1;
+    		}
+    	}
+    	
+    	//System.out.println("list : "+list);
+    	temp.add(cnt);
+        //System.out.println("temp : "+temp);
+        
+        int[] answer = new int[temp.size()];
+        for(int i=0;i<answer.length;i++) answer[i]=temp.get(i);
+        
         return answer;
     }
 }
