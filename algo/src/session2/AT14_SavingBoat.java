@@ -23,23 +23,35 @@ public class AT14_SavingBoat {
 }
 class Solution14 {
 	public int solution(int[] people, int limit) {
-        int answer = 0;
+        int answer = people.length;
         Arrays.sort(people);
-        System.out.println(Arrays.toString(people));
-        for(int i=0;i<people.length;i++) {
-        	
+        //System.out.println(Arrays.toString(people));
+        
+        
+        for(int i=0;i<people.length-1;i++) {
+        	if(people[i]>0) {
+        		int total=0;
+            	int max = 0;
+            	int[] temp = new int[2];
+            	for(int j=i+1;j<people.length;j++) {
+            		total = people[i]+people[j];
+            		if(total>limit) {
+            			answer++;
+            			break;
+            		}
+            		if(max<total) {
+            			max=total;
+            			temp[0]=i;
+            			temp[1]=j;
+            		}
+            	}
+            	people[temp[0]]=0;
+            	people[temp[1]]=0;
+            	answer--;
+            	System.out.println(Arrays.toString(people));
+        	}
         }
         return answer;
     }
-	int function(int[] people, int limit, int n) {
-		int answer = 0;
-		for(int i=0;i<people.length;i++) {
-			int total = 0;
-			for(int j=i;j<n;j++) {
-				total += people[j];
-			}
-			if((100-answer)>(100-total)) answer = total;
-		}
-		return answer;
-	}
+	
 }
